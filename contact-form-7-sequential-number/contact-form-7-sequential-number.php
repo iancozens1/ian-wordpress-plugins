@@ -9,14 +9,6 @@ Author URI: http://www.welldevelopedforu.com
 */
 // reference the settings page
 require_once("admin-settings.php");
-//jquery - Working
-function wptuts_scripts_with_jquery()
-{
-    // Register the script like this for a plugin:
-    wp_register_script( 'custom-script', plugins_url( '/js/js.js', __FILE__ ), array( 'jquery' ) );
-    // or
-}
-add_action( 'wp_enqueue_scripts', 'wptuts_scripts_with_jquery' );
 
 //Function to check option exists in the database
 
