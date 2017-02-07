@@ -5,7 +5,6 @@ Description: Generates sequential number to output in contact form 7 mail
 Version: 0.5
 License: GPL
 Author: Ian Cozens
-Author URI: http://www.welldevelopedforu.com
 */
 // reference the settings page
 require_once("admin-settings.php");
