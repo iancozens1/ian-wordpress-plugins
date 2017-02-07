@@ -3,7 +3,7 @@ Description: Generates sequential number to output in contact form 7 email
 Version: 0.5
 License: GPL
 Author: Ian Cozens
-Author URI: http://www.welldevelopedforu.com
+
 
 ==Description==
 The plugin extends the ever popular Contact form 7 plugin for wordpress with sequential numbers.
