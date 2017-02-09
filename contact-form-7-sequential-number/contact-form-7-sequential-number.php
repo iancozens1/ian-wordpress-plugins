@@ -2,7 +2,7 @@
 /*
 Plugin Name: Contact Form 7 Sequencial Number Generator
 Description: Generates sequential number to output in contact form 7 mail
-Version: 0.5
+Version: 0.7
 License: GPL
 Author: Ian Cozens
 */
