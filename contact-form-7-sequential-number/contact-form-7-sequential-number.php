@@ -6,7 +6,7 @@ Version: 0.5
 License: GPL
 Author: Ian Cozens
 */
-// reference the settings page
+// Add the Amdin settings page
 require_once("admin-settings.php");
 
 //Function to check option exists in the database
@@ -26,12 +26,12 @@ function exist_option( $arg ) {
         return true;
     }
 }
-// generate sequential number
+// generate contact form sequential number
 function wpcf7_generate_seq_number( $wpcf7_data ) {
 $properties = $wpcf7_data->get_properties();
 
 // Set shortcode
-$shortcode = '[rand-generator]';
+$shortcode = '[wpcf7-sequence]';
 
 //declare mail properties
 $mail = $properties['mail']['body'];
