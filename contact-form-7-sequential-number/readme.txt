@@ -1,6 +1,6 @@
 Plugin Name: Contact Form 7 Sequential Number Generator
 Description: Generates sequential number to output in contact form 7 email
-Version: 0.5
+Version: 0.7
 License: GPL
 Author: Ian Cozens
 
