@@ -10,7 +10,6 @@ Author: Ian Cozens
 require_once("admin-settings.php");
 
 //Function to check option exists in the database
-
 function exist_option( $arg ) {
 
     global $wpdb;
@@ -26,6 +25,7 @@ function exist_option( $arg ) {
         return true;
     }
 }
+
 // generate contact form sequential number
 function wpcf7_generate_seq_number( $wpcf7_data ) {
 $properties = $wpcf7_data->get_properties();
@@ -46,6 +46,11 @@ $prefix_option = 'wpcf7sg_' . $wpcf7_data->id() . '_prefix';
 if( exist_option( 'wpcf7sg_' . $wpcf7_data->id() . '_prefix' ) == false ) {
     add_option( $prefix_option ,'',  '', true );
 }
+//Check if suffix option exists, if not create blank option
+$suffix_option = 'wpcf7sg_' . $wpcf7_data->id() . '_suffix';
+if( exist_option( 'wpcf7sg_' . $wpcf7_data->id() . '_suffix' ) == false ) {
+    add_option( $suffix_option ,'',  '', true );
+}
 // get option by contact form id
 $option = 'wpcf7sg_' . $wpcf7_data->id();
 
@@ -57,14 +62,17 @@ update_option( $option, $sequence_number );
 
 // get prefix option data
 $prefix = get_option( $prefix_option );
+    
+// get suffix option data
+$suffix = get_option( $suffix_option );
 
 //replace shortcode in body
-$properties['mail']['body'] = str_replace( $shortcode, $prefix . $sequence_number, $mail );
-$properties['mail_2']['body'] = str_replace( $shortcode, $prefix . $sequence_number, $mail_2 );
+$properties['mail']['body'] = str_replace( $shortcode, $prefix . $sequence_number . $suffix, $mail );
+$properties['mail_2']['body'] = str_replace( $shortcode, $prefix . $sequence_number . $suffix, $mail_2 );
 
 //replace shortcode in subject
-$properties['mail']['subject'] = str_replace( $shortcode, $prefix . $sequence_number, $mailsu );
-$properties['mail_2']['subject'] = str_replace( $shortcode, $prefix . $sequence_number, $mailsu_2 );
+$properties['mail']['subject'] = str_replace( $shortcode, $prefix . $sequence_number . $suffix, $mailsu );
+$properties['mail_2']['subject'] = str_replace( $shortcode, $prefix . $sequence_number . $suffix, $mailsu_2 );
 
 $wpcf7_data->set_properties( $properties );
 }
