@@ -45,6 +45,14 @@ function cf7sng_settings_init(  ) {
 		'cf7sng_pluginPage_section' 
 	);
 	
+	add_settings_field( 
+		'cf7sng_text_field_3', 
+		__( 'Suffix', 'wordpress' ), 
+		'cf7sng_text_field_3_render', 
+		'pluginPage', 
+		'cf7sng_pluginPage_section' 
+	);
+	
 	
 
 
@@ -80,6 +88,17 @@ function cf7sng_text_field_2_render(  ) {
 
 }
 
+//prefix
+function cf7sng_text_field_3_render(  ) { 
+
+	$options = get_option( 'cf7sng_settings' );
+	?>
+	<input type='text' name='cf7sng_settings[cf7sng_text_field_3]' value='<?php echo $options['cf7sng_text_field_3']; ?>'>
+	<?php
+
+}
+
+
 
 
 function cf7sng_settings_section_callback(  ) { 
@@ -103,12 +122,14 @@ function cf7sng_options_page(  ) {
 		
 		$options = get_option( 'cf7sng_settings' );
 		$id_option = 'wpcf7sg_' .  $options['cf7sng_text_field_0'];
-
+		//update sequencial number int
 		update_option($id_option, $options['cf7sng_text_field_1']);
-		
+		//update prefix
 		$prefix_option = 'wpcf7sg_' .  $options['cf7sng_text_field_0'] . '_prefix';
 		update_option($prefix_option, $options['cf7sng_text_field_2']);
-		
+		//update suffix
+		$suffix_option = 'wpcf7sg_' .  $options['cf7sng_text_field_0'] . '_suffix';
+		update_option($suffix_option, $options['cf7sng_text_field_3']);
 		
 ?>
 
