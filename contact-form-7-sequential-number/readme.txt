@@ -1,7 +1,12 @@
-Plugin Name: Contact Form 7 Sequential Number Generator
+=== Contact Form 7 Sequential Number Generator ===
+Tags: contact form 7, contact, 
+Requires at least: 4.6
+Tested up to: 4.7
+Stable tag: 4.6
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Description: Generates sequential number to output in contact form 7 email
-Version: 0.7
-License: GPL
+
 Author: Ian Cozens
 
 ==License==
